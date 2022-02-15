@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* start of setting up a grid for dive courses */
+.item1 { grid-area: header; }
+.item2 { grid-area: middle; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main middle middle right right'
+    'footer footer footer footer footer footer';
+  grid-gap: 5px;
+  padding: 10px;
+  /* justify-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 75vw;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.3);
+  /* rgba rgb is colour, a is the alpha value for opacity, 0 is completly clear, closer to 1 is mor solid */
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  gap: 2rem;
+}
+/* finish setting up a grid for dive courses */
+
+/* grid container about me */
+.grid-container-me {
+    
+    display: inline-grid;
+    grid-template-columns: 400px;
+    grid-template-rows: auto auto auto;
+    background-color: #21f391;
+    padding: 5px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid silver;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Calligraffitti';
+    text-align: center;
+  }
+/* grid container about me */
+
+/* grid container footer */
+.grid-container-footer {
+    display: grid;
+    grid-template-columns: auto 400px auto;
+    grid-template-rows: auto;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+  }
+  .grid-item-footer {
+    background-color: green;
+    width: 400px;
+    border: 3px solid silver;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+  /* .grid-item-footer:first-child {
+    justify-self: end;
+  }
+*/
+/* grid container footer */
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .button1 {border-radius: 12px;}
+
+.cardImage {
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    background-image: url(/pictures/State-of-the-Oceans.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+
+}
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+h4 {
+    text-align: center;
+}
+
+@font-face {
+  font-family: 'slant';
+  src: url(./fonts/DancingScript/DancingScript-Regular.ttf);
+}
+.slant {
+  font-family: 'slant', serif;
+}
+@font-face {
+  font-family: 'Calligraffitti';
+  src: url(./fonts/Calligraffitti-Regular.ttf);
+}
+.Calligraffitti {
+  font-family: 'Calligraffitti', serif;
+}
