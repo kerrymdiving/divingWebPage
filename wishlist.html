@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish-List</title>
+    <style>
+        @font-face {
+            font-family: 'DancingScript';
+            src: url(./fonts/DancingScript/DancingScript-Regular.ttf);
+        }
+
+        body {
+            font-family: 'DancingScript', serif;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wish List</h1>
+    </header>
+    <main>
+        <ul id="wish-list"></ul>
+    </main>
+    <footer>
+        <form onsubmit="event.preventDefault();addWish(this);">
+            <article>
+                <label for="wish-input">Add a wish</label>
+                <input id="wish-input" name="wish" />
+                <button type="submit">Add</button>
+            </article>
+        </form>
+    </footer>
+    <script>
+        const wishes = [
+            {
+                text: "Add a wish  ",
+                status: 0
+            }
+        ]
+        function addWish(form) {
+            const data = new FormData(form)
+            wishes.push({
+                text: data.get('wish'),
+                status: 0
+            })
+            form.reset()
+            render()
+        }
+        function render() {
+            const list = document.getElementById("wish-list")
+            list.innerHTML = ""
+
+            wishes.forEach((wish, index) => {
+                const li = document.createElement("li")
+                const textSpan = document.createElement("span")
+                const statusSpan = document.createElement("span")
+                const text = document.createTextNode(wish.text)
+                /* const status = document.createTextNode(wish.status ? '&#x2714;' : '&#129416;') */
+                statusSpan.innerHTML = wish.status ? '&#x2714;' : '&#129416;'
+
+                statusSpan.addEventListener('click', function (event) {
+                    updateWish(index)
+                })
+
+                textSpan.appendChild(text)
+                /* statusSpan.appendChild(status) */
+                li.appendChild(textSpan)
+                li.appendChild(statusSpan)
+                list.appendChild(li)
+            })
+        }
+        function updateWish(index) {
+            const currentStatus = wishes[index].status
+            const newStatus = currentStatus === 0 ? 1 : 0
+            wishes[index].status = newStatus
+            render()
+        }
+        
+        render()
+    </script>
+</body>
+
+</html>
