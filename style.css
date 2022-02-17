@@ -1,7 +1,31 @@
-* {
-    padding: 0;
-    margin: 0;
+
+/* top header */
+.top-header {
+background: #fff;
+height: 44px;
+padding: 0 64px;
+border-bottom: 1px solid #d7dee4;
 }
+
+.main-top-header__wrapper {
+  display: flex;
+  margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1332px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.top-header a {
+  transition: all 0.1s linear;
+  text-decoration: none;
+}
+.top-header_link {
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* top header*/
 
 /* start of setting up a grid for dive courses */
 .item1 { grid-area: header; }
