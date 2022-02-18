@@ -58,6 +58,7 @@ border-bottom: 1px solid #d7dee4;
 }
 /* finish setting up a grid for dive courses */
 #image-div {
+  border-radius: 15rem;
 /* padding: 0; */
 
 }
